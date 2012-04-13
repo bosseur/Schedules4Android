@@ -34,12 +34,12 @@
                     android:id="@+id/mondayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/mondayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/mondayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -56,12 +56,12 @@
                     android:id="@+id/tuesdayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/tuesdayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/tuesdayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -78,12 +78,12 @@
                     android:id="@+id/wednesdayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/wednesdayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/wednesdayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -100,12 +100,12 @@
                     android:id="@+id/thursdayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/thursdayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/thursdayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -122,12 +122,12 @@
                     android:id="@+id/fridayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/fridayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/fridayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -144,12 +144,12 @@
                     android:id="@+id/saturdayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/saturdayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/saturdayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>
@@ -166,12 +166,12 @@
                     android:id="@+id/sundayDate"
                     style="@style/date"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/sundayHourStart"
                     style="@style/hourStart"
                     android:text="00:00"/>
 
-            <me.passos.android.schedules.TextViewTimePicker
+            <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/sundayHourEnd"
                     style="@style/hourEnd"
                     android:text="00:00"/>

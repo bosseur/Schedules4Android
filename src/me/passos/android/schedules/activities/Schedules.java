@@ -1,8 +1,12 @@
-package me.passos.android.schedules;
+package me.passos.android.schedules.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import me.passos.android.schedules.R;
+import me.passos.android.schedules.components.TextViewTimePicker;
+import me.passos.android.schedules.dao.ScheduleDAO;
+import me.passos.android.schedules.util.WeekDate;
 
 import java.util.Calendar;
 
@@ -93,37 +97,55 @@ public class Schedules extends Activity {
 		
 		WeekDate weekDate = new WeekDate(week);
 
+        ScheduleDAO scheduleDAO = new ScheduleDAO(this);
+
 		firstDateOfWeek.setText(weekDate.getMonday());
 		weekNumber.setText(String.valueOf(week));
 		lastDateOfWeek.setText(weekDate.getSunday());
 	
 		mondayDate.setText(weekDate.getMonday());
         mondayHourStart.setDate(weekDate.getMondayDate());
+        mondayHourStart.setText(scheduleDAO.getHourStart(weekDate.getMondayDate()));
         mondayHourEnd.setDate(weekDate.getMondayDate());
-        
+        mondayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getMondayDate()));
+
 		tuesdayDate.setText(weekDate.getTuesday());
         tuesdayHourStart.setDate(weekDate.getTuesdayDate());
+        tuesdayHourStart.setText(scheduleDAO.getHourStart(weekDate.getTuesdayDate()));
         tuesdayHourEnd.setDate(weekDate.getTuesdayDate());
+        tuesdayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getTuesdayDate()));
 
 		wednesdayDate.setText(weekDate.getWednesday());
         wednesdayHourStart.setDate(weekDate.getWednesdayDate());
+        wednesdayHourStart.setText(scheduleDAO.getHourStart(weekDate.getWednesdayDate()));
         wednesdayHourEnd.setDate(weekDate.getWednesdayDate());
+        wednesdayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getWednesdayDate()));
 
 		thursdayDate.setText(weekDate.getThursday());
         thursdayHourStart.setDate(weekDate.getThursdayDate());
+        thursdayHourStart.setText(scheduleDAO.getHourStart(weekDate.getThursdayDate()));
         thursdayHourEnd.setDate(weekDate.getThursdayDate());
+        thursdayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getThursdayDate()));
 
 		fridayDate.setText(weekDate.getFriday());
         fridayHourStart.setDate(weekDate.getFridayDate());
+        fridayHourStart.setText(scheduleDAO.getHourStart(weekDate.getFridayDate()));
         fridayHourEnd.setDate(weekDate.getFridayDate());
+        fridayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getFridayDate()));
 
 		saturdayDate.setText(weekDate.getSaturday());
         saturdayHourStart.setDate(weekDate.getSaturdayDate());
+        saturdayHourStart.setText(scheduleDAO.getHourStart(weekDate.getSaturdayDate()));
         saturdayHourEnd.setDate(weekDate.getSaturdayDate());
+        saturdayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getSaturdayDate()));
 
 		sundayDate.setText(weekDate.getSunday());
         sundayHourStart.setDate(weekDate.getSundayDate());
+        sundayHourStart.setText(scheduleDAO.getHourStart(weekDate.getSundayDate()));
         sundayHourEnd.setDate(weekDate.getSundayDate());
+        sundayHourEnd.setText(scheduleDAO.getHourEnd(weekDate.getSundayDate()));
+
+        scheduleDAO.close();
 		
 	}
 	

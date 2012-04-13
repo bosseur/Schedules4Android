@@ -1,4 +1,4 @@
-package me.passos.android.schedules;
+package me.passos.android.schedules.util;
 
 import android.util.Log;
 
@@ -17,6 +17,10 @@ public class WeekDate {
 		this.week = week;
 		calendar = Calendar.getInstance();
 		calendar.set(Calendar.WEEK_OF_YEAR, week);
+        calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         Log.d("Schedules", calendar.getTime().toString());
 	}
 	
@@ -82,6 +86,10 @@ public class WeekDate {
 		Calendar sundayCalendar = Calendar.getInstance();
 		sundayCalendar.set(Calendar.WEEK_OF_MONTH, week + 1);
 		sundayCalendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+        sundayCalendar.set(Calendar.HOUR, 0);
+        sundayCalendar.set(Calendar.MINUTE, 0);
+        sundayCalendar.set(Calendar.SECOND, 0);
+        sundayCalendar.set(Calendar.MILLISECOND, 0);
 		return format.format(sundayCalendar.getTime());
 	}
 
@@ -89,6 +97,10 @@ public class WeekDate {
    		Calendar sundayCalendar = Calendar.getInstance();
    		sundayCalendar.set(Calendar.WEEK_OF_MONTH, week + 1);
    		sundayCalendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+        sundayCalendar.set(Calendar.HOUR, 0);
+        sundayCalendar.set(Calendar.MINUTE, 0);
+        sundayCalendar.set(Calendar.SECOND, 0);
+        sundayCalendar.set(Calendar.MILLISECOND, 0);
    		return sundayCalendar.getTime();
    	}
 

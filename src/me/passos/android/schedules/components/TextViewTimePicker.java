@@ -1,4 +1,4 @@
-package me.passos.android.schedules;
+package me.passos.android.schedules.components;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import me.passos.android.schedules.dao.ScheduleDAO;
+import me.passos.android.schedules.util.HourType;
 
 import java.util.Date;
 
@@ -29,11 +31,18 @@ public class TextViewTimePicker extends TextView implements View.OnClickListener
     }
 
     public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-        this.setText(
-                new StringBuilder()
-                        .append(pad(hour)).append(":")
-                        .append(pad(minute))
-        );
+
+        StringBuffer newHour = new StringBuffer();
+        newHour.append(pad(hour))
+               .append(":")
+               .append(pad(minute));
+
+        this.setText(newHour.toString());
+
+        ScheduleDAO scheduleDAO = new ScheduleDAO(context);
+        scheduleDAO.setHour(date, newHour.toString(), HourType.START);
+        scheduleDAO.close();
+
     }
 
     private int getHour() {
