@@ -1,128 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/mondayDateHeader"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_weight="1" />
+            android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/weekNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+                android:id="@+id/mondayDateHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_weight="1"/>
 
         <TextView
-            android:id="@+id/sundayDateHeader"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_weight="1" />
+                android:id="@+id/weekNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                />
+
+        <TextView
+                android:id="@+id/sundayDateHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_weight="1"/>
     </LinearLayout>
 
     <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
         <TableRow>
+            <TextView
+                    android:text="@string/monday"
+                    style="@style/dayOfWeek"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/monday" />
+                    android:id="@+id/mondayDate"
+                    style="@style/date"/>
 
             <TextView
-                android:id="@+id/mondayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/mondayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
+
+            <TextView
+                    android:id="@+id/mondayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    android:text="@string/tuesday"
+                    style="@style/dayOfWeek"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tuesday" />
+                    android:id="@+id/tuesdayDate"
+                    style="@style/date"/>
 
             <TextView
-                android:id="@+id/tuesdayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/tuesdayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
+
+            <TextView
+                    android:id="@+id/tuesdayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    android:text="@string/wednesday"
+                    style="@style/dayOfWeek"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/wednesday" />
+                    android:id="@+id/wednesdayDate"
+                    style="@style/date"/>
 
             <TextView
-                android:id="@+id/wednesdayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/wednesdayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
+
+            <TextView
+                    android:id="@+id/wednesdayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    style="@style/dayOfWeek"
+                    android:text="@string/thursday"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/thursday" />
+                    android:id="@+id/thursdayDate"
+                    style="@style/date"/>
+            <TextView
+                    android:id="@+id/thursdayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
 
             <TextView
-                android:id="@+id/thursdayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/thursdayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    style="@style/dayOfWeek"
+                    android:text="@string/friday"/>
+            <TextView
+                    android:id="@+id/fridayDate"
+                    style="@style/date"/>
+            <TextView
+                    android:id="@+id/fridayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/friday" />
-
-            <TextView
-                android:id="@+id/fridayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/fridayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    style="@style/dayOfWeek"
+                    android:text="@string/saturday"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/saturday" />
+                    android:id="@+id/saturdayDate"
+                    style="@style/date"/>
 
             <TextView
-                android:id="@+id/saturdayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/saturdayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
+
+            <TextView
+                    android:id="@+id/saturdayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
 
         <TableRow>
+            <TextView
+                    style="@style/dayOfWeek"
+                    android:text="@string/sunday"/>
+            <TextView
+                    android:id="@+id/sundayDate"
+                    style="@style/date"/>
+            <TextView
+                    android:id="@+id/sundayHourStart"
+                    style="@style/hourStart"
+                    android:text="00:00"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sunday" />
-
-            <TextView
-                android:id="@+id/sundayDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:id="@+id/sundayHourEnd"
+                    style="@style/hourEnd"
+                    android:text="00:00"/>
         </TableRow>
     </TableLayout>
 
