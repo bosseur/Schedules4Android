@@ -48,7 +48,7 @@ public class Schedules extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.schedules);
 
 		loadComponents();
 		setDates();
