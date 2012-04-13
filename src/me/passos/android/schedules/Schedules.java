@@ -8,9 +8,9 @@ import java.util.Calendar;
 
 public class Schedules extends Activity {
 
-	private TextView mondayDateHeader;
+	private TextView firstDateOfWeek;
 	private TextView weekNumber;
-	private TextView sundayDateHeader;
+	private TextView lastDateOfWeek;
 	
 	private TextView mondayDate;
 	private TextView tuesdayDate;
@@ -35,9 +35,9 @@ public class Schedules extends Activity {
 	
 	private void loadComponents() {
 
-		mondayDateHeader = (TextView) findViewById(R.id.mondayDateHeader);
+		firstDateOfWeek = (TextView) findViewById(R.id.firstDateOfWeek);
 		weekNumber = (TextView) findViewById(R.id.weekNumber);
-		sundayDateHeader = (TextView) findViewById(R.id.sundayDateHeader);
+		lastDateOfWeek = (TextView) findViewById(R.id.lastDateHeader);
 		
 		mondayDate = (TextView) findViewById(R.id.mondayDate);
 		tuesdayDate = (TextView) findViewById(R.id.tuesdayDate);
@@ -53,9 +53,9 @@ public class Schedules extends Activity {
 		
 		WeekDate weekDate = new WeekDate(week);
 
-		mondayDateHeader.setText(weekDate.getMondayOfTheWeek());
+		firstDateOfWeek.setText(weekDate.getMondayOfTheWeek());
 		weekNumber.setText(String.valueOf(week));
-		sundayDateHeader.setText(weekDate.getSundayOfTheWeek());
+		lastDateOfWeek.setText(weekDate.getSundayOfTheWeek());
 	
 		mondayDate.setText(weekDate.getMondayOfTheWeek());
 		tuesdayDate.setText(weekDate.getTuesdayOfTheWeek());
