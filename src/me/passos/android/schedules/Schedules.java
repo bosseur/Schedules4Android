@@ -26,14 +26,11 @@ public class Schedules extends Activity {
 		setContentView(R.layout.main);
 
 		loadComponents();
-		
-		Calendar calendar = Calendar.getInstance();
-		int week = calendar.get(Calendar.WEEK_OF_YEAR);
-		setDatesOfTheWeek(week);
+		setDatesOfTheWeek();
 		
 	}
-	
-	private void loadComponents() {
+
+    private void loadComponents() {
 
 		firstDateOfWeek = (TextView) findViewById(R.id.firstDateOfWeek);
 		weekNumber = (TextView) findViewById(R.id.weekNumber);
@@ -49,7 +46,10 @@ public class Schedules extends Activity {
 
 	}
 
-	private void setDatesOfTheWeek(int week) {
+	private void setDatesOfTheWeek() {
+
+        Calendar calendar = Calendar.getInstance();
+        int week = calendar.get(Calendar.WEEK_OF_YEAR);
 		
 		WeekDate weekDate = new WeekDate(week);
 
