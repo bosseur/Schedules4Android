@@ -7,14 +7,21 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.Date;
+
 public class TextViewTimePicker extends TextView implements View.OnClickListener, TimePickerDialog.OnTimeSetListener {
 
     private final Context context;
+    private Date date;
 
     public TextViewTimePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         setOnClickListener(this);
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public void onClick(View view) {

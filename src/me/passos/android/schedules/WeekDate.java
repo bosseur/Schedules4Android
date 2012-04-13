@@ -2,6 +2,7 @@ package me.passos.android.schedules;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class WeekDate {
 
@@ -16,40 +17,77 @@ public class WeekDate {
 		calendar.set(Calendar.WEEK_OF_MONTH, week);
 	}
 	
-	private String getDayOfTheWeek(int dayOfWeek) {
+	private String getDay(int dayOfWeek) {
 		calendar.set(Calendar.DAY_OF_WEEK, dayOfWeek);
 		return format.format(calendar.getTime());
 	}
+
+    private Date getDate(int dayOfWeek) {
+        calendar.set(Calendar.DAY_OF_WEEK, dayOfWeek);
+        return calendar.getTime();
+    }
 	
-	public String getMondayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.MONDAY);
+	public String getMonday() {
+		return getDay(Calendar.MONDAY);
 	}
 
-	public String getTuesdayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.TUESDAY);
-	}
-	
-	public String getWednesdayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.WEDNESDAY);
+    public Date getMondayDate() {
+        return getDate(Calendar.MONDAY);
+    }
+
+	public String getTuesday() {
+		return getDay(Calendar.TUESDAY);
 	}
 
-	public String getThursdayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.THURSDAY);
+    public Date getTuesdayDate() {
+        return getDate(Calendar.TUESDAY);
+    }
+	
+	public String getWednesday() {
+		return getDay(Calendar.WEDNESDAY);
 	}
 
-	public String getFridayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.FRIDAY);
+    public Date getWednesdayDate() {
+   		return getDate(Calendar.WEDNESDAY);
+   	}
+
+	public String getThursday() {
+		return getDay(Calendar.THURSDAY);
+	}
+
+	public Date getThursdayDate() {
+		return getDate(Calendar.THURSDAY);
+	}
+
+	public String getFriday() {
+		return getDay(Calendar.FRIDAY);
 	}
 	
-	public String getSaturdayOfTheWeek() {
-		return getDayOfTheWeek(Calendar.SATURDAY);
+	public Date getFridayDate() {
+		return getDate(Calendar.FRIDAY);
 	}
-	
-	public String getSundayOfTheWeek() {
+
+	public String getSaturday() {
+		return getDay(Calendar.SATURDAY);
+	}
+
+    public Date getSaturdayDate() {
+   		return getDate(Calendar.SATURDAY);
+   	}
+
+	public String getSunday() {
 		Calendar sundayCalendar = Calendar.getInstance();
 		sundayCalendar.set(Calendar.WEEK_OF_MONTH, week + 1);
 		sundayCalendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
 		return format.format(sundayCalendar.getTime());
 	}
-	
+
+    public Date getSundayDate() {
+   		Calendar sundayCalendar = Calendar.getInstance();
+   		sundayCalendar.set(Calendar.WEEK_OF_MONTH, week + 1);
+   		sundayCalendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+   		return sundayCalendar.getTime();
+   	}
+
+
 }
