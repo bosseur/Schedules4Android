@@ -1,5 +1,7 @@
 package me.passos.android.schedules;
 
+import android.util.Log;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,7 +16,8 @@ public class WeekDate {
 	public WeekDate(int week) {
 		this.week = week;
 		calendar = Calendar.getInstance();
-		calendar.set(Calendar.WEEK_OF_MONTH, week);
+		calendar.set(Calendar.WEEK_OF_YEAR, week);
+        Log.d("Schedules", calendar.getTime().toString());
 	}
 	
 	private String getDay(int dayOfWeek) {
