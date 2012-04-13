@@ -15,6 +15,7 @@ public class TextViewTimePicker extends TextView implements View.OnClickListener
 
     private final Context context;
     private Date date;
+    private HourType type;
 
     public TextViewTimePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -24,6 +25,10 @@ public class TextViewTimePicker extends TextView implements View.OnClickListener
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void setType(HourType type) {
+        this.type = type;
     }
 
     public void onClick(View view) {
@@ -40,7 +45,7 @@ public class TextViewTimePicker extends TextView implements View.OnClickListener
         this.setText(newHour.toString());
 
         ScheduleDAO scheduleDAO = new ScheduleDAO(context);
-        scheduleDAO.setHour(date, newHour.toString(), HourType.START);
+        scheduleDAO.setHour(date, newHour.toString(), type);
         scheduleDAO.close();
 
     }

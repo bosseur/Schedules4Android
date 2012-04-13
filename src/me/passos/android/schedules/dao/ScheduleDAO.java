@@ -13,7 +13,7 @@ import java.util.Date;
 public class ScheduleDAO extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME = "Schedules";
-    private static final int TABLE_VERSION = 3;
+    private static final int TABLE_VERSION = 4;
 
     private static final String DEFAULT_HOUR = "00:00";
 
@@ -42,8 +42,7 @@ public class ScheduleDAO extends SQLiteOpenHelper {
         onCreate(database);
     }
 
-    private String getHour(Date date, HourType hourType) {
-
+    private Cursor getHours(Date date) {
         String[] columns = new String[] { "start", "end" };
         String selection = "date=?";
         String[] selectionArgs = new String[] { dateFormat.format(date) };
@@ -51,7 +50,20 @@ public class ScheduleDAO extends SQLiteOpenHelper {
         String having = null;
         String order = null;
 
-        Cursor c = getWritableDatabase().query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, order);
+        return getWritableDatabase().query(TABLE_NAME, columns, selection, selectionArgs, groupBy, having, order);
+    }
+
+    private boolean exists(Date date) {
+        Cursor c = getHours(date);
+        boolean exists = (c.getCount() > 0);
+        c.close();
+        return exists;
+    }
+
+    private String getHour(Date date, HourType hourType) {
+
+        Cursor c = getHours(date) ;
+
         c.moveToFirst();
 
         String hourStart = DEFAULT_HOUR;
@@ -81,10 +93,10 @@ public class ScheduleDAO extends SQLiteOpenHelper {
        		values.put("end", hour);
         }
 
-        if( ( getHour(date, hourType) == null ) || ( getHour(date, hourType).equals(DEFAULT_HOUR) ) ) {
-            insert(date, values);
-        } else  {
+        if( exists(date) ) {
             update(date, values);
+        } else  {
+            insert(date, values);
         }
 
     }
