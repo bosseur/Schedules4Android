@@ -5,7 +5,7 @@
         <item name="android:background">#FF909090</item>
     </style>
     <style name="font">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="header" parent="font">
@@ -13,14 +13,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
     </style>
-    <style name="firstDateOfWeek" parent="header">
+    <style name="previousWeek" parent="header">
         <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">center</item>
     </style>
     <style name="weekNumber" parent="header">
         <item name="android:gravity">center_horizontal</item>
     </style>
-    <style name="lastDateOfWeek" parent="header">
+    <style name="nextWeek" parent="header">
         <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center</item>
     </style>
     <style name="tableRow">
         <item name="android:layout_width">wrap_content</item>

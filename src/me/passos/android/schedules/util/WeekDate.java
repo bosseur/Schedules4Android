@@ -3,8 +3,10 @@ package me.passos.android.schedules.util;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class WeekDate {
 
@@ -93,5 +95,26 @@ public class WeekDate {
         return sundayCalendar.getTime();
     }
 
+    public static int getThisWeek() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.WEEK_OF_YEAR);
+    }
 
+    public static int getLastWeekOfYear() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DATE, 1);
+        calendar.set(Calendar.MONTH, Calendar.DECEMBER);
+        calendar.set(Calendar.HOUR, 1);
+        return calendar.get(Calendar.WEEK_OF_YEAR);
+    }
+
+    public static List<Integer> getListOfWeekOnThisYear() {
+
+        List<Integer> weeks = new ArrayList<Integer>();
+        for (int i = 1; i <= getLastWeekOfYear(); i++) {
+            weeks.add(i);
+        }
+        return weeks;
+
+    }
 }

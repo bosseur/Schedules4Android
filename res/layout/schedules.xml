@@ -9,16 +9,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-        <TextView
-                android:id="@+id/firstDateOfWeek"
-                style="@style/firstDateOfWeek"/>
-        <TextView
+        <ImageView
+                android:id="@+id/previousWeek"
+                style="@style/previousWeek"
+                android:src="@drawable/ic_back"/>
+        <Spinner
                 android:id="@+id/weekNumber"
                 style="@style/weekNumber"/>
-        <TextView
-                android:id="@+id/lastDateHeader"
-                style="@style/lastDateOfWeek"/>
+        <ImageView
+                android:id="@+id/nextsWeek"
+                style="@style/nextWeek"
+                android:src="@drawable/ic_next"/>
     </LinearLayout>
 
     <TableLayout
@@ -36,16 +37,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/mondayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/mondayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -58,16 +57,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/tuesdayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/tuesdayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -80,16 +77,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/wednesdayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/wednesdayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -102,16 +97,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/thursdayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/thursdayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -124,16 +117,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/fridayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/fridayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -146,16 +137,14 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/saturdayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/saturdayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
 
-        <View style="@style/lineDivision" />
+        <View style="@style/lineDivision"/>
 
         <TableRow style="@style/tableRow">
             <TextView
@@ -168,13 +157,11 @@
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/sundayHourStart"
-                    style="@style/hourStart"
-                    android:text="00:00"/>
+                    style="@style/hourStart"/>
 
             <me.passos.android.schedules.components.TextViewTimePicker
                     android:id="@+id/sundayHourEnd"
-                    style="@style/hourEnd"
-                    android:text="00:00"/>
+                    style="@style/hourEnd"/>
         </TableRow>
     </TableLayout>
 

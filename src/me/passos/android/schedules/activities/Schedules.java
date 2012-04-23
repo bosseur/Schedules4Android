@@ -2,21 +2,20 @@ package me.passos.android.schedules.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.*;
 import me.passos.android.schedules.R;
 import me.passos.android.schedules.components.TextViewTimePicker;
 import me.passos.android.schedules.dao.ScheduleDAO;
 import me.passos.android.schedules.util.HourType;
 import me.passos.android.schedules.util.WeekDate;
 
-import java.util.Calendar;
-
 public class Schedules extends Activity {
 
-	private TextView firstDateOfWeek;
-	private TextView weekNumber;
-	private TextView lastDateOfWeek;
-	
+    private ImageView previousWeek;
+	private Spinner weekNumber;
+    private ImageView nextWeek;
+
 	private TextView mondayDate;
     private TextViewTimePicker mondayHourStart;
     private TextViewTimePicker mondayHourEnd;
@@ -51,16 +50,41 @@ public class Schedules extends Activity {
 		setContentView(R.layout.schedules);
 
 		loadComponents();
-		setDates();
+		setDates(WeekDate.getThisWeek());
 		
 	}
 
     private void loadComponents() {
 
-		firstDateOfWeek = (TextView) findViewById(R.id.firstDateOfWeek);
-		weekNumber = (TextView) findViewById(R.id.weekNumber);
-		lastDateOfWeek = (TextView) findViewById(R.id.lastDateHeader);
-		
+        previousWeek = (ImageView) findViewById(R.id.previousWeek);
+        previousWeek.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                int weekSelected = (Integer) weekNumber.getSelectedItem();
+                if( weekSelected > 1 ) {
+                    setDates(((Integer) weekNumber.getSelectedItem() - 1));
+                }
+            }
+        });
+        weekNumber = (Spinner) findViewById(R.id.weekNumber);
+        weekNumber.setAdapter(new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, WeekDate.getListOfWeekOnThisYear()));
+        weekNumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                setDates((Integer) adapterView.getItemAtPosition(position));
+            }
+
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+        nextWeek = (ImageView) findViewById(R.id.nextsWeek);
+        nextWeek.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                int weekSelected = (Integer) weekNumber.getSelectedItem();
+                if( weekSelected < WeekDate.getLastWeekOfYear() ) {
+                    setDates(((Integer) weekNumber.getSelectedItem() + 1));
+                }
+            }
+        });
+
 		mondayDate = (TextView) findViewById(R.id.mondayDate);
         mondayHourStart = (TextViewTimePicker) findViewById(R.id.mondayHourStart);
         mondayHourEnd = (TextViewTimePicker) findViewById(R.id.mondayHourEnd);
@@ -91,21 +115,16 @@ public class Schedules extends Activity {
 
 	}
 
-	private void setDates() {
+	private void setDates(int week) {
 
         // TODO Move HourType to XML layout
 
-        Calendar calendar = Calendar.getInstance();
-        int week = calendar.get(Calendar.WEEK_OF_YEAR);
-		
 		WeekDate weekDate = new WeekDate(week);
 
         ScheduleDAO scheduleDAO = new ScheduleDAO(this);
 
-		firstDateOfWeek.setText(weekDate.getMonday());
-		weekNumber.setText(String.valueOf(week));
-		lastDateOfWeek.setText(weekDate.getSunday());
-	
+		weekNumber.setSelection(week - 1);
+
 		mondayDate.setText(weekDate.getMonday());
         mondayHourStart.setDate(weekDate.getMondayDate());
         mondayHourStart.setText(scheduleDAO.getHourStart(weekDate.getMondayDate()));
